@@ -1,0 +1,434 @@
+\pdfoutput=1
+\documentclass[sigconf,nonacm]{acmart}
+
+\settopmatter{printacmref=false}
+\renewcommand\footnotetextcopyrightpermission[1]{}
+\pagestyle{plain}
+
+\usepackage{booktabs}
+\usepackage{tabularx}
+
+\begin{document}
+
+\title{Position: Eddy --- ADHD as Competitive Advantage in\\AI-Augmented Multi-Project Orchestration}
+
+\author{Jiyeon Yoon}
+\affiliation{%
+  \institution{Independent Researcher}
+  \country{South Korea}
+}
+\email{heznpc@gmail.com}
+
+\begin{abstract}
+ADHD is conventionally framed as a deficit in sustained attention and task switching, with clinical guidelines recommending single-task workflows. This position paper challenges that framing for a specific, increasingly common configuration: multi-project orchestration with AI agent sessions that maintain persistent context. In this environment, the traditional bottleneck of task switching---reconstructing lost context---is eliminated by the AI agent, leaving only the cognitive step of re-engaging with a new topic. We hypothesize that ADHD's rapid engagement with novel stimuli, typically framed as distractibility, becomes a competitive advantage: ADHD professionals re-engage with a new session faster than neurotypical (NT) peers because their attentional system is optimized for rapid stimulus-locking rather than sustained maintenance. This inverts the standard disability framing---ADHD is not compensated by AI but \emph{amplified} by it. We ground the hypothesis in dopaminergic dynamics and cognitive offloading theory, propose a $2 \times 2$ experimental design for future validation, and discuss implications for neurodivergent-aware tool design. No experimental results are reported; the contribution is the theoretical reframing and a testable research agenda.
+\end{abstract}
+
+\keywords{ADHD, multi-session workflow, AI-augmented workflow, cognitive offloading, neurodiversity, task switching, position paper}
+
+\maketitle
+
+% ===================================================================
+\section{Introduction}
+
+\subsection{The Standard Framing}
+
+ADHD affects an estimated 5--7\% of adults worldwide. In professional contexts, the disorder is primarily characterized by difficulties with: (1)~\textbf{sustained attention}---maintaining focus on a single task over extended periods; (2)~\textbf{task switching}---transitioning between tasks without losing context or momentum; and (3)~\textbf{working memory}---holding and manipulating task-relevant information during transitions.
+
+The standard recommendation is to minimize task switching: single-task workflows, time-blocking, distraction removal. Tools designed for ADHD users (Forest, Cold Turkey, Focus Bear) universally enforce this model---reduce stimuli, force sustained attention, block escape routes.
+
+\subsection{The New Environment}
+
+As of 2026, a qualitatively different work environment has emerged: AI-augmented multi-session workflows. A developer might simultaneously maintain:
+
+\begin{itemize}
+  \item Terminal~A: AI coding session on a React frontend (full project context loaded)
+  \item Terminal~B: AI coding session on a Python backend (different repo, full context loaded)
+  \item Terminal~C: AI coding session writing a research paper (full document context loaded)
+\end{itemize}
+
+Each AI session maintains \textbf{persistent context}---the full project state, recent decisions, pending tasks, and conversational history. When the user returns to any session after minutes or hours away, the AI can immediately present where the project stands, what was last decided, what the logical next step is, and any pending questions.
+
+This eliminates the traditional task-switching bottleneck entirely. The user does not need to reconstruct context from memory or re-read files---the AI provides a complete state summary on demand.
+
+Critically, however, AI does not reduce the cognitive demands of work---it \emph{transforms} them. Recent field studies show that AI-augmented professionals report increased mental fatigue and decision burden despite higher throughput~\cite{ranganathan2026}, a phenomenon termed ``AI brain fry''~\cite{bedard2026}. AI eliminates routine implementation (boilerplate code, syntax lookup, repetitive edits) but concentrates the remaining work into a stream of high-level decisions: architectural choices, trade-off evaluations, correctness judgments. Each session return is therefore not merely reading a summary---it is encountering a decision point that demands rapid cognitive engagement.
+
+\subsection{The Hypothesis}
+
+In this AI-augmented multi-session environment, the remaining cognitive step when switching between projects is \textbf{re-engagement}: locking attention onto the new topic and producing the next meaningful decision or action.
+
+We hypothesize that ADHD brains perform this step \emph{faster} than NT brains:
+
+\begin{itemize}
+  \item \textbf{ADHD's rapid engagement.} The attentional system is optimized for novel stimulus capture. When a new session presents fresh information, the ADHD brain locks on immediately. This is the same mechanism underlying hyperfocus, but applied to session transitions.
+  \item \textbf{NT's warmup cost.} Neurotypical users, even with AI-provided context summaries, tend to re-read, verify, and gradually rebuild their mental model before acting. Task interruption research consistently shows a measurable \emph{resumption lag}---the time needed to reactivate a suspended goal representation---that persists even when external cues are available~\cite{altmann2002, trafton2003}. Cognitive offloading studies further demonstrate that people do not passively accept externally stored information but engage in \emph{verification behavior}, cross-checking external state against their degraded internal model~\cite{risko2016}. A residual task-switch cost remains even with full advance knowledge of the upcoming task~\cite{monsell2003}. This deliberate warmup is adaptive in context-poor environments but unnecessary when the AI provides complete state.
+\end{itemize}
+
+The result: \textbf{ADHD users produce the next decision/action faster after each session switch, and in a multi-project workflow with frequent switches, this advantage compounds.} We call this rapid, circular re-engagement pattern the \textbf{\emph{eddy}}---a fluid vortex that loops back on itself with minimal energy loss, capturing the way ADHD attention naturally cycles through multiple foci when the environment permits it.
+
+\subsection{The Inversion}
+
+This is not an accommodation narrative (``AI helps ADHD users cope''). It is an advantage narrative:
+
+\begin{table*}[htbp]
+\caption{Trait reframing under AI-augmented multi-session orchestration.}
+\label{tab:inversion}
+\begin{tabularx}{\textwidth}{@{}lXX@{}}
+\toprule
+\textbf{Trait} & \textbf{Standard framing} & \textbf{Multi-session framing} \\
+\midrule
+Rapid engagement & Deficit (distractibility) & \textbf{Advantage} (fast re-engagement) \\
+Low sustained attention & Deficit (can't focus) & Neutral (sessions interruptible) \\
+Stimulus-seeking & Deficit (distraction-prone) & \textbf{Advantage} (novelty per switch) \\
+Poor context maintenance & Deficit (forgets state) & \textbf{Eliminated} (AI maintains) \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+The environment has changed. The disability model assumed context maintenance was the user's job. In AI-augmented workflows, it is not.
+
+\subsection{Theoretical Motivation}
+
+This hypothesis emerges from synthesizing recent findings on AI-induced decision fatigue~\cite{bedard2026} with established neurocognitive models of ADHD. As AI tools eliminate routine implementation and concentrate knowledge work into rapid, high-level decision points, the structural demands of programming increasingly align with the novelty-seeking, fast-locking attentional profile characteristic of ADHD. While anecdotal reports from neurodivergent developers navigating these new workflows align with this observation, this paper grounds the hypothesis entirely in established cognitive theory to propose a testable, environment-dependent advantage.
+
+\subsection{Contributions}
+
+\begin{itemize}
+  \item A theoretical reframing of ADHD traits as competitive advantages in AI-augmented multi-session orchestration (\S\ref{sec:framework})
+  \item A neuroscience-grounded mechanism for why rapid engagement outperforms deliberate warmup in context-persistent environments (\S\ref{sec:neuro})
+  \item A proposed $2 \times 2$ experimental design to test the hypothesis (\S\ref{sec:experiment})
+  \item Design implications for neurodivergent-aware AI tools (\S\ref{sec:design})
+\end{itemize}
+
+% ===================================================================
+\section{Theoretical Framework}
+\label{sec:framework}
+
+\subsection{ADHD's Attentional Profile: Deficit or Mismatch?}
+
+The dominant clinical model frames ADHD as a deficit in executive function---specifically, in the ability to regulate attention according to task demands~\cite{barkley1997}. However, an alternative framing has gained traction: ADHD as an attentional \emph{style} that is maladaptive in certain environments and adaptive in others~\cite{hupfeld2019}.
+
+\textbf{Presentation heterogeneity.} ADHD is not monolithic. DSM-5 distinguishes three presentations: predominantly inattentive (ADHD-I), predominantly hyperactive-impulsive (ADHD-HI), and combined (ADHD-C). Our eddy hypothesis---that rapid stimulus-locking confers re-engagement speed---is most directly applicable to ADHD-C and ADHD-HI, where novelty-seeking and phasic dopamine response are most pronounced. ADHD-I, often associated with sluggish cognitive tempo (SCT)~\cite{barkley2014sct}, presents a different attentional profile: reduced processing speed, hypo-arousal, and ``spaciness'' rather than stimulus-seeking. For ADHD-I individuals, the eddy mechanism may be weaker or absent---their re-engagement bottleneck may not be stimulus capture but arousal mobilization, which AI context provision does not directly address. However, ADHD-I individuals still benefit from the elimination of context reconstruction (their primary deficit in working memory remains offloaded), even if they do not gain the \emph{speed} advantage in re-engagement. The proposed experiment (\S\ref{sec:experiment}) should stratify by presentation to test this distinction directly, recruiting sufficient ADHD-I participants to power a subgroup analysis.
+
+Key findings supporting this reframing:
+
+\begin{itemize}
+  \item \textbf{Hyperfocus is real and measurable.} ADHD individuals can sustain attention on high-interest tasks at levels equal to or exceeding NT peers~\cite{ashinoff2021}. The deficit is not in attentional capacity but in volitional attentional control.
+  \item \textbf{Novelty-seeking is neurologically grounded.} ADHD is associated with reduced tonic dopamine and increased phasic dopamine response to novel stimuli~\cite{volkow2009}. This creates a system optimized for rapid engagement with new input.
+\end{itemize}
+
+This reframing has evolutionary precedent. Jensen et al.~\cite{jensen1997} proposed that ADHD traits---hypervigilance, rapid response to novel stimuli, high motor readiness---were adaptive in ancestral hunter-gatherer environments, where ``response-ready'' individuals outperformed contemplative ones in volatile, threat-rich settings. Eisenberg et al.~\cite{eisenberg2008} provided empirical support: among Kenya's Ariaal population, carriers of the DRD4 7R allele (associated with ADHD) had significantly better nutritional status in \emph{nomadic} groups but not in recently settled ones---a direct demonstration of environment-dependent fitness. Williams \& Taylor~\cite{williams2006} extended this further via evolutionary simulation, showing that even individually impairing trait combinations can be positively selected at the group level when they increase cognitive diversity in exploration and foraging tasks. ADHD's 5--10\% prevalence and the positive evolutionary selection of DRD4 7R~\cite{williams2006} suggest these traits were not random noise but functional adaptations whose fit depends on environmental structure. We argue that AI-augmented multi-session workflows recreate a structurally similar environment: high novelty, frequent context shifts, and rewards for rapid engagement rather than sustained vigilance. The parallel deepens when considering what AI has done to knowledge work: by automating routine implementation, AI transforms the developer's role from sustained execution (analogous to agriculture---repetitive, patience-rewarding) into rapid judgment under shifting contexts (analogous to hunting and foraging---volatile, response-rewarding)~\cite{ranganathan2026, bedard2026}. The cognitive profile that was maladaptive for the ``agricultural'' phase of software engineering may be precisely adapted for this new ``foraging'' phase.
+
+\subsection{Context Maintenance vs.\ Context Provision}
+
+Traditional task switching has two components: (1)~\textbf{disengagement}---releasing the current task's mental model; and (2)~\textbf{re-engagement}---building the new task's mental model from memory or artifacts.
+
+ADHD's deficit is primarily in component~2: reconstructing context from working memory~\cite{martinussen2005}. Component~1---disengagement---is often \emph{too easy} in ADHD (the mind wanders involuntarily).
+
+AI agent sessions transform this equation:
+
+\smallskip
+\noindent\textit{Traditional:} Disengage (easy) $\to$ Reconstruct context (hard) $\to$ Engage
+
+\noindent\textit{AI-augmented:} Disengage (easy) $\to$ AI provides context (free) $\to$ Engage (fast)
+\smallskip
+
+The hard step is removed. The easy steps remain. The remaining step (engage with novel stimulus) is one where ADHD has an advantage. This is the core of the \emph{eddy} pattern: ADHD attention can cycle rapidly through multiple AI sessions because the costly context reconstruction step has been eliminated by the AI, leaving only the low-friction step of re-engagement.
+
+\subsection{The Compound Advantage}
+
+In a workflow with $N$ projects and $K$ switches per hour, let $W_{\text{NT}}$ and $W_{\text{ADHD}}$ denote warmup time per switch for NT and ADHD users respectively. If $W_{\text{ADHD}} < W_{\text{NT}}$ (our hypothesis), then over $K$ switches:
+
+\begin{equation}
+\text{Time saved per hour} = K \times (W_{\text{NT}} - W_{\text{ADHD}})
+\end{equation}
+
+For a developer managing 3--5 active projects with switches every 15--30 minutes, this could---depending on the magnitude of $W_{\text{NT}} - W_{\text{ADHD}}$---accumulate to a meaningful productive time difference per workday. We refrain from specifying exact estimates until empirical measurement of $W_{\text{NT}}$ and $W_{\text{ADHD}}$ is available (see \S\ref{sec:experiment}), but note that even a modest per-switch advantage (e.g., 30 seconds) compounds to 20--40 minutes over a full workday with 40+ switches.
+
+\subsection{Boundary Conditions}
+
+This advantage is predicted to hold only when: (1)~AI context is high-quality---if the AI summary is incomplete, context reconstruction falls back to the user and ADHD's working memory deficit re-emerges; (2)~projects are sufficiently distinct---similar projects create interference rather than novelty; (3)~switches are self-directed---externally imposed interruptions break hyperfocus; (4)~tasks require decision-making, not rote execution; (5)~re-engagement is \emph{accurate}, not merely fast---a critical assumption is that ADHD's rapid stimulus-locking produces correct engagement (attending to the right information and making sound decisions) rather than impulsive action on incomplete understanding---if faster TTFA comes at the cost of higher error rates or shallower comprehension, the advantage is illusory (the proposed experiment in \S\ref{sec:experiment} measures output quality alongside speed to test this directly); and (6)~hyperfocus does not prevent switching---ADHD users who enter a hyperfocus state on one session may resist transitioning even when other sessions would benefit from attention, effectively collapsing the multi-session workflow into a single-session one. The multi-session advantage requires that the environment (or the user's self-regulation) supports timely disengagement.
+
+% ===================================================================
+\section{Neuroscience Basis}
+\label{sec:neuro}
+
+\subsection{Dopaminergic Dynamics}
+
+One influential model proposes that ADHD involves reduced tonic (baseline) dopamine with relatively enhanced phasic (stimulus-triggered) dopamine signaling~\cite{grace2001, badgaiyan2015}. If this model holds, it would create low baseline motivation for sustained, familiar tasks (poor sustained attention) but high phasic response to novel, salient stimuli (rapid engagement, hyperfocus onset).
+
+However, this tonic/phasic framing remains debated. Recent reviews emphasize that dopaminergic alterations are heterogeneous across ADHD populations and may represent only one of several neurobiological pathways---including noradrenergic systems and the dual-pathway model separating executive dysfunction from delay aversion~\cite{macdonald2024, faraone2021}. Volkow et al.~\cite{volkow2009} found reduced dopamine markers in reward regions of never-medicated ADHD adults, but did not directly measure the tonic/phasic distinction. We adopt the tonic/phasic framework here because it offers the most direct mechanistic link to our hypothesis about novelty-driven re-engagement, while acknowledging that it may apply to a subset of ADHD presentations rather than universally.
+
+In a multi-session environment, each switch would provide a phasic dopamine trigger: new project, new context, new problem to solve. The AI session acts as a \textbf{novelty delivery mechanism}---every return to a session presents updated state, new findings, or new questions. This creates a self-reinforcing cycle: each session switch is reinforced by phasic dopamine, sustaining rapid re-engagement that would otherwise decay in a static environment.
+
+\subsection{Default Mode Network Dynamics}
+
+ADHD is associated with atypical default mode network (DMN) suppression during task engagement~\cite{castellanos2016}. The DMN, active during mind-wandering, is normally suppressed when attending to external tasks. In ADHD, this suppression is unreliable---the DMN intrudes during sustained tasks, causing attention lapses.
+
+However, during task \emph{transitions}, the DMN plays a productive role: it facilitates mental model switching and creative recombination of information from different contexts~\cite{christoff2016}. In a multi-session workflow, frequent transitions \emph{leverage} DMN activity rather than fighting it. Rather than suppressing DMN intrusions (an effortful and often failing strategy), the multi-session workflow channels them into productive between-session transitions.
+
+\subsection{Cognitive Offloading Theory}
+
+Risko \& Gilbert~\cite{risko2016} define cognitive offloading as ``the use of physical action to alter the information processing requirements of a task.'' AI agent sessions represent an extreme form: the entire task context is maintained externally. The cognitive load of multi-project management drops to near-zero, regardless of the user's working memory capacity.
+
+For NT users, this offloading is helpful but partially redundant---they already maintain reasonable internal context representations. For ADHD users, where internal context maintenance is the primary deficit, the offloading is \emph{transformative}---it removes the bottleneck entirely.
+
+% ===================================================================
+\section{Proposed Experiment}
+\label{sec:experiment}
+
+\textit{This section describes an experimental design for future empirical validation. No data has been collected. The design is included to demonstrate that the hypothesis is falsifiable and to invite collaboration from researchers with access to clinical ADHD populations.}
+
+\subsection{Design}
+
+We propose a $2 \times 2$ mixed design: ADHD/NT (between-subjects, clinical diagnosis confirmed via structured clinical interview, with ASRS-v1.1 as initial screening) $\times$ single-session/multi-session (within-subjects, counterbalanced).
+
+\textbf{Sample size rationale.} A power analysis targeting a medium interaction effect (Cohen's $f = 0.25$) at $\alpha = .05$, power $= .80$, for a $2 \times 2$ mixed ANOVA indicates a minimum of $n = 34$ per group. We recommend $n = 40$ per group (total $N = 80$) to account for attrition and covariate adjustment (medication status, programming experience). A sensitivity analysis should confirm detectable effect sizes post-recruitment.
+
+\subsection{Task}
+
+Participants manage 3 distinct software projects simultaneously, each with an AI agent session: (1)~a React frontend feature implementation; (2)~a Python API endpoint debugging task; and (3)~a technical specification writing task. Each is designed for $\sim$45 minutes of continuous work. In the multi-session condition, participants switch freely over a 2-hour block. In the single-session condition, tasks are done sequentially.
+
+\textbf{Ecological validity.} The 2-hour compressed format trades realism for experimental control. Real multi-project workflows span days to weeks, during which novelty per switch declines and project familiarity increases. The compressed format likely inflates novelty effects for all participants; however, the critical measure is the \emph{relative} ADHD--NT difference in TTFA, which should be robust to absolute novelty level. We recommend two complementary follow-up designs to address ecological validity: (1)~a \textbf{longitudinal ESM study} in which ADHD and NT developers use instrumented AI agent sessions in their real work over 4--6 weeks, with TTFA and output quality logged automatically at each session switch and brief ESM prompts sampling subjective state 3--5 times daily; and (2)~a \textbf{telemetry analysis} of anonymized, opt-in usage logs from existing AI coding tools, comparing switch frequency, TTFA, and productivity metrics between users who self-report ADHD diagnosis and those who do not. These designs sacrifice experimental control for ecological validity and can capture the novelty decay dynamics that the compressed lab study cannot.
+
+\subsection{Measures}
+
+\textbf{Primary:} (1)~\textbf{Time-to-first-action (TTFA)} after each session switch---defined as the interval from the moment the participant's terminal switches to a new session until they produce a \emph{qualifying action}: a code edit of $\geq$1 logical line, a document addition of $\geq$1 sentence, or an explicit decision communicated to the AI agent (e.g., ``let's go with approach B''). Cursor movements, scrolling, and re-reading the AI summary without acting do not qualify. TTFA is timestamped automatically via IDE event logging. (2)~\textbf{Output quality} of each qualifying action, assessed by blinded expert review on a 3-point scale (correct, partially correct, incorrect). This is co-primary with TTFA because faster re-engagement is only meaningful if action quality is preserved. (3)~Total task completion across all 3 projects in the 2-hour block.
+
+\textbf{Secondary:} switch frequency (self-paced), switch initiation latency, and subjective workload (NASA-TLX).
+
+\subsection{Predictions}
+
+\begin{table}[htbp]
+\caption{Predicted outcomes by condition.}
+\label{tab:predictions}
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{Measure} & \textbf{Prediction} \\
+\midrule
+TTFA (multi-session) & ADHD $<$ NT (faster re-engagement) \\
+TTFA (single-session) & ADHD $\approx$ NT (no switching) \\
+Quality (multi) & ADHD $\approx$ NT (speed without accuracy loss) \\
+Completion (multi) & ADHD $\geq$ NT (compound advantage) \\
+Completion (single) & ADHD $\leq$ NT (sustained attn.\ favors NT) \\
+Switch frequency & ADHD $>$ NT \\
+NASA-TLX (multi) & ADHD $<$ NT (lower workload) \\
+NASA-TLX (single) & ADHD $>$ NT (higher workload) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The critical interaction: if ADHD users show advantage in the multi-session condition but not the single-session condition, this supports the environment-dependent advantage hypothesis.
+
+\subsection{Controls}
+
+All participants use identical AI configurations. Projects use unfamiliar codebases. Medication status is reported and analyzed as a covariate. Programming experience is matched between groups. A standardized multi-terminal setup is used with no additional distractions.
+
+\textbf{Switching confound.} In the multi-session condition, switching is self-paced. ADHD participants are predicted to switch more frequently (\autoref{tab:predictions}), but higher switch frequency could reflect impulsivity rather than strategic re-engagement. To disentangle these interpretations, we analyze TTFA and output quality \emph{conditional on switch frequency}: if ADHD users switch more often \emph{and} maintain equivalent quality per action, the advantage interpretation is supported; if quality degrades with increasing switch frequency, impulsivity is the more parsimonious explanation. Additionally, switch initiation latency (time from last productive action to switching away) is recorded to distinguish deliberate transitions from escape-driven ones.
+
+% ===================================================================
+\section{Design Implications}
+\label{sec:design}
+
+\subsection{For AI Tool Designers}
+
+If the hypothesis holds, AI tools should support multi-session workflows as a first-class feature: (1)~proactive ``where we left off'' summaries on session switch, optimized for rapid re-engagement; (2)~no penalties for frequent switching; and (3)~cross-session status dashboards enabling the user to see all project states at a glance.
+
+\subsection{For ADHD Accommodation Frameworks}
+
+Current accommodations focus on reducing stimuli and enforcing focus. In AI-augmented environments, an alternative is possible: provide multi-session infrastructure rather than focus-enforcement tools, allow self-directed switching rather than imposing time blocks, and measure output rather than process.
+
+\subsection{For Neurodiversity Research}
+
+This work suggests that disability framing is environment-dependent. ADHD traits that are deficits in context-poor, single-task environments become advantages in context-rich, multi-session environments. This is consistent with the social model of disability but provides a concrete, testable mechanism.
+
+% ===================================================================
+\section{Related Work}
+
+\textbf{AI and ADHD executive function.} ISCAP 2025~\cite{iscap2025} identifies four mechanisms by which AI supports ADHD; we extend the third (context-switching cost reduction) to complete elimination. The Neurodivergent-Aware Productivity framework~\cite{arxiv2507} proposes adaptive interventions; we argue the natural style may already be optimal. BMC Psychology 2025~\cite{bmc2025} frames AI as rehabilitation; we frame it as environmental fit.
+
+\textbf{ADHD as advantage.} White \& Shah~\cite{white2011} showed ADHD adults outperform NT on divergent thinking. Boot et al.~\cite{boot2017} reviewed how dopaminergic modulation of fronto-striatal networks supports creative cognition, with implications for ADHD. Wiklund et al.~\cite{wiklund2017} found ADHD-related impulsivity and novelty-seeking correlate with entrepreneurial intentions and action. Hupfeld et al.~\cite{hupfeld2019} reviewed ADHD as context-dependent advantage.
+
+\textbf{Evolutionary perspective.} Jensen et al.~\cite{jensen1997} proposed ADHD traits as adaptive in hunter-gatherer environments. Eisenberg et al.~\cite{eisenberg2008} demonstrated empirically that the DRD4 7R allele confers nutritional advantage in nomadic but not settled populations. Williams \& Taylor~\cite{williams2006} showed via evolutionary simulation that ADHD-associated cognitive diversity benefits groups even when individually impairing. Our work extends this evolutionary logic to a contemporary environment: AI-augmented multi-session workflows structurally resemble the high-novelty, rapid-shift conditions under which ADHD traits were originally selected.
+
+\textbf{AI-induced decision fatigue.} Ranganathan \& Ye~\cite{ranganathan2026} found in an 8-month field study that AI augmentation increased throughput but also cognitive fatigue and burnout, with focused work sessions declining 9\%. Bedard et al.~\cite{bedard2026} surveyed 1,488 workers and identified ``AI brain fry''---mental fatigue from continuous oversight and judgment demands rather than routine automation. These findings support our framing: AI does not simply reduce cognitive load but \emph{redirects} it toward high-level decision-making, creating an environment where rapid engagement with novel decision points---rather than sustained routine execution---determines performance.
+
+\textbf{Cognitive offloading.} Risko \& Gilbert~\cite{risko2016} provided the foundational framework. Runge et al.~\cite{runge2023} extended it to AI-specific offloading. PMC 2025~\cite{pmc2025} warned of cognitive overload from AI tools; our boundary conditions (\S\ref{sec:framework}) address this directly.
+
+% ===================================================================
+\section{Limitations and Risks}
+\label{sec:limitations}
+
+This paper presents a theoretical argument, not empirical findings. The following limitations constrain all claims:
+
+\textbf{No empirical validation.} The hypothesis has not been tested. The proposed experiment (\S\ref{sec:experiment}) is designed to be falsifiable---the hypothesis may be wrong.
+
+\textbf{Population specificity.} Our hypothesis applies to knowledge workers with ADHD who already use AI tools. The proposed experiment uses software development tasks exclusively; whether the advantage extends to other multi-project knowledge work (e.g., research, design, writing) remains untested.
+
+\textbf{Novelty decay.} The advantage depends on each session switch providing sufficient novelty to trigger phasic dopamine response. In practice, a developer returning to the same 3--5 projects daily will experience diminishing novelty within days to weeks. At that point, the re-engagement advantage may converge with NT baselines. However, several factors may mitigate this decay: (1)~\textbf{AI-generated reframing}---AI agents can present returning users with updated summaries that emphasize \emph{what changed} since the last visit, new test results, or reframed subproblems, artificially sustaining novelty per switch; (2)~\textbf{project portfolio rotation}---knowledge workers naturally cycle projects in and out of their active set, maintaining a baseline novelty level across weeks; and (3)~\textbf{task decomposition}---within a single project, AI agents can decompose work into discrete subtasks that each present as a ``fresh'' challenge upon return. Whether these mechanisms are sufficient to sustain the eddy advantage beyond the initial novelty window is an empirical question. Longitudinal studies measuring TTFA decay curves over weeks---ideally using experience sampling methodology (ESM) in real work environments---are needed to establish the temporal boundary of the advantage.
+
+\textbf{Medication interaction.} Stimulant medication may reduce the phasic dopamine response underlying rapid engagement. The advantage may be modulated or eliminated by medication status.
+
+\textbf{Ethical risk.} Framing ADHD as advantage risks minimizing genuine suffering. We explicitly do not claim ADHD is universally advantageous---only that specific traits, in a specific AI-augmented environment, may confer measurable benefits. This framing should supplement, not replace, clinical support.
+
+\textbf{Confound risk.} The $2 \times 2$ design attempts to isolate the multi-session $\times$ ADHD interaction from the general benefit of AI assistance. A $2 \times 2 \times 2$ design adding AI presence as a third factor would be stronger but requires double the participants.
+
+% ===================================================================
+\section{Conclusion}
+
+The clinical consensus that ADHD professionals should minimize task switching assumes that context maintenance is the user's responsibility. AI agent sessions with persistent context invalidate this assumption. When context is externally maintained, the remaining cognitive step---re-engaging with a new topic---is one where ADHD's rapid stimulus-locking may provide a speed advantage over neurotypical warmup patterns.
+
+This is not an accommodation. It is a competitive advantage that emerges from the interaction between a neurodivergent attentional style and an AI-augmented work environment. The \emph{eddy}---the rapid, circular re-engagement pattern that ADHD users naturally exhibit---becomes the optimal strategy when the environment supports it.
+
+We propose that AI tool designers, workplace accommodation frameworks, and neurodiversity researchers consider this possibility: that the next generation of AI-augmented workflows may be environments where ADHD is not a disability to manage but a cognitive style to leverage.
+
+% ===================================================================
+\begin{thebibliography}{29}
+
+\bibitem{barkley1997}
+R.~A. Barkley. 1997.
+\newblock ADHD and the Nature of Self-Control.
+\newblock {\em Guilford Press}.
+
+\bibitem{ashinoff2021}
+B.~K. Ashinoff and A.~Abu-Akel. 2021.
+\newblock Hyperfocus: The Forgotten Frontier of Attention.
+\newblock {\em Psychological Research} 85, 1 (2021), 1--19.
+
+\bibitem{volkow2009}
+N.~D. Volkow et~al. 2009.
+\newblock Evaluating Dopamine Reward Pathway in ADHD: Clinical Implications.
+\newblock {\em JAMA} 302, 10 (2009), 1084--1091.
+
+\bibitem{martinussen2005}
+R.~Martinussen et~al. 2005.
+\newblock A Meta-Analysis of Working Memory Impairments in Children with ADHD.
+\newblock {\em J.~American Academy of Child \& Adolescent Psychiatry} 44, 4 (2005), 377--384.
+
+\bibitem{grace2001}
+A.~A. Grace. 2001.
+\newblock Psychostimulant Actions on Dopamine and Limbic System Function: Relevance to the Pathophysiology and Treatment of ADHD.
+\newblock {\em Annals of the New York Academy of Sciences} 931 (2001), 292--300.
+
+\bibitem{castellanos2016}
+F.~X. Castellanos and Y.~Aoki. 2016.
+\newblock Intrinsic Functional Connectivity in Attention-Deficit/Hyperactivity Disorder: A Science in Development.
+\newblock {\em Biological Psychiatry: CNNI} 1, 3 (2016), 253--261.
+
+\bibitem{christoff2016}
+K.~Christoff et~al. 2016.
+\newblock Mind-Wandering as Spontaneous Thought: A Dynamic Framework.
+\newblock {\em Nature Reviews Neuroscience} 17, 11 (2016), 718--731.
+
+\bibitem{risko2016}
+E.~F. Risko and S.~J. Gilbert. 2016.
+\newblock Cognitive Offloading.
+\newblock {\em Trends in Cognitive Sciences} 20, 9 (2016), 676--688.
+
+\bibitem{white2011}
+H.~A. White and P.~Shah. 2011.
+\newblock Creative Style and Achievement in Adults with Attention-Deficit/Hyperactivity Disorder.
+\newblock {\em Personality and Individual Differences} 50, 5 (2011), 673--677.
+
+\bibitem{boot2017}
+N.~Boot et~al. 2017.
+\newblock Creative Cognition and Dopaminergic Modulation of Fronto-Striatal Networks: Integrative Review and Research Agenda.
+\newblock {\em Neuroscience \& Biobehavioral Reviews} 78 (2017), 13--23.
+
+\bibitem{hupfeld2019}
+K.~E. Hupfeld et~al. 2019.
+\newblock Living ``In the Zone'': Hyperfocus in Adult ADHD.
+\newblock {\em ADHD Attention Deficit and Hyperactivity Disorders} 11, 2 (2019), 191--208.
+
+\bibitem{runge2023}
+Y.~Runge et~al. 2023.
+\newblock Cognitive Offloading to AI.
+\newblock {\em Trends in Cognitive Sciences} 27, 12 (2023), 1089--1091.
+
+\bibitem{iscap2025}
+L.~Mew. 2025.
+\newblock Enhancing Programming Productivity for Individuals with ADHD Through Generative Artificial Intelligence: An Inductive Analysis.
+\newblock {\em 2025 Proceedings of the ISCAP Conference}, v11 n6377, Louisville, KY.
+
+\bibitem{arxiv2507}
+R.~Deshmukh. 2025.
+\newblock Toward Neurodivergent-Aware Productivity: A Systems and AI-Based Human-in-the-Loop Framework for ADHD-Affected Professionals.
+\newblock {\em arXiv preprint} arXiv:2507.06864.
+
+\bibitem{bmc2025}
+M.~Dah\`{o} and B.~Caci. 2025.
+\newblock Exploring AI-assisted Design of Executive Function Rehabilitation Programs for Individuals with ADHD: A Mixed-Methods Evaluation of Prompts and ChatGPT Outputs.
+\newblock {\em BMC Psychology} 14 (2025), 25.
+
+\bibitem{pmc2025}
+G.~Chirayath, K.~Premamalini, and J.~Joseph. 2025.
+\newblock Cognitive Offloading or Cognitive Overload? How AI Alters the Mental Architecture of Coping.
+\newblock {\em Frontiers in Psychology} 16 (2025), 1699320.
+
+\bibitem{altmann2002}
+E.~M. Altmann and J.~G. Trafton. 2002.
+\newblock Memory for Goals: An Activation-Based Model.
+\newblock {\em Cognitive Science} 26, 1 (2002), 39--83.
+
+\bibitem{trafton2003}
+J.~G. Trafton, E.~M. Altmann, D.~P. Brock, and F.~E. Mintz. 2003.
+\newblock Preparing to Resume an Interrupted Task: Effects of Prospective Goal Encoding and Retrospective Rehearsal.
+\newblock {\em International Journal of Human-Computer Studies} 58, 5 (2003), 583--603.
+
+\bibitem{monsell2003}
+S.~Monsell. 2003.
+\newblock Task Switching.
+\newblock {\em Trends in Cognitive Sciences} 7, 3 (2003), 134--140.
+
+\bibitem{wiklund2017}
+J.~Wiklund, W.~Yu, R.~Tucker, and L.~D. Marino. 2017.
+\newblock ADHD, Impulsivity and Entrepreneurship.
+\newblock {\em Journal of Business Venturing} 32, 6 (2017), 627--656.
+
+\bibitem{macdonald2024}
+H.~J. MacDonald, R.~Kleppe, P.~D. Szigetvari, and J.~Haavik. 2024.
+\newblock The Dopamine Hypothesis for ADHD: An Evaluation of Evidence Accumulated from Human Studies and Animal Models.
+\newblock {\em Frontiers in Psychiatry} 15 (2024), 1492126.
+
+\bibitem{faraone2021}
+S.~V. Faraone et~al. 2021.
+\newblock The World Federation of ADHD International Consensus Statement: 208 Evidence-Based Conclusions About the Disorder.
+\newblock {\em Neuroscience \& Biobehavioral Reviews} 128 (2021), 789--818.
+
+\bibitem{badgaiyan2015}
+R.~D. Badgaiyan, S.~Sinha, M.~Sajjad, and D.~S. Wack. 2015.
+\newblock Attenuated Tonic and Enhanced Phasic Release of Dopamine in Attention Deficit Hyperactivity Disorder.
+\newblock {\em PLOS ONE} 10, 9 (2015), e0137326.
+
+\bibitem{jensen1997}
+P.~S. Jensen et~al. 1997.
+\newblock Evolution and Revolution in Child Psychiatry: ADHD as a Disorder of Adaptation.
+\newblock {\em J.~American Academy of Child \& Adolescent Psychiatry} 36, 12 (1997), 1672--1681.
+
+\bibitem{eisenberg2008}
+D.~T.~A. Eisenberg, B.~Campbell, J.~MacKillop, J.~K. Lum, and D.~S. Wilson. 2008.
+\newblock Dopamine Receptor Genetic Polymorphisms and Body Composition in Undernourished Pastoralists: An Exploration of Nutrition Indices Among Nomadic and Recently Settled Ariaal Men of Northern Kenya.
+\newblock {\em BMC Evolutionary Biology} 8 (2008), 173.
+
+\bibitem{williams2006}
+J.~Williams and E.~Taylor. 2006.
+\newblock The Evolution of Hyperactivity, Impulsivity and Cognitive Diversity.
+\newblock {\em Journal of The Royal Society Interface} 3, 8 (2006), 399--413.
+
+\bibitem{barkley2014sct}
+R.~A. Barkley. 2014.
+\newblock Sluggish Cognitive Tempo (Concentration Deficit Disorder?): Current Status, Future Directions, and a Plea to Change the Name.
+\newblock {\em Journal of Abnormal Child Psychology} 42, 1 (2014), 117--125.
+
+\bibitem{ranganathan2026}
+A.~Ranganathan and X.~M. Ye. 2026.
+\newblock AI Doesn't Reduce Work---It Intensifies It.
+\newblock {\em Harvard Business Review} (February 2026).
+
+\bibitem{bedard2026}
+J.~Bedard, M.~Kropp, M.~Hsu, O.~Karaman, J.~Hawes, and G.~Kellerman. 2026.
+\newblock When Using AI Leads to ``Brain Fry.''
+\newblock {\em Harvard Business Review} (March 2026).
+
+\end{thebibliography}
+
+\end{document}
