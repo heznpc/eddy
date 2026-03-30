@@ -129,10 +129,10 @@ AI agent sessions transform this equation:
 \smallskip
 \noindent\textit{Traditional:} Disengage (easy) $\to$ Reconstruct context (hard) $\to$ Engage
 
-\noindent\textit{AI-augmented:} Disengage (easy) $\to$ AI provides context (free) $\to$ Engage (fast)
+\noindent\textit{AI-augmented:} Disengage (easy) $\to$ AI provides context (low cost) $\to$ Engage (fast)
 \smallskip
 
-The hard step is removed. The easy steps remain. The remaining step (engage with novel stimulus) is one where ADHD has an advantage. This is the core of the \emph{eddy} pattern: ADHD attention can cycle rapidly through multiple AI sessions because the costly context reconstruction step has been eliminated by the AI, leaving only the low-friction step of re-engagement.
+The hard step is substantially reduced, though not eliminated entirely: as Risko \& Gilbert~\cite{risko2016} note, cognitive offloading incurs verification costs---users cross-check externally provided state against their degraded internal model. The AI summary is not passively absorbed but actively evaluated, imposing a residual cognitive cost. Nevertheless, this cost is far smaller than full context reconstruction from memory, and the remaining dominant step---engaging with a novel stimulus---is one where ADHD has an advantage. This is the core of the \emph{eddy} pattern: ADHD attention can cycle rapidly through multiple AI sessions because the costly context reconstruction step has been reduced to a brief verification step by the AI, leaving re-engagement as the primary determinant of switching speed.
 
 \subsection{The Compound Advantage}
 
@@ -143,6 +143,8 @@ In a workflow with $N$ projects and $K$ switches per hour, let $W_{\text{NT}}$ a
 \end{equation}
 
 For a developer managing 3--5 active projects with switches every 15--30 minutes, this could---depending on the magnitude of $W_{\text{NT}} - W_{\text{ADHD}}$---accumulate to a meaningful productive time difference per workday. We refrain from specifying exact estimates until empirical measurement of $W_{\text{NT}}$ and $W_{\text{ADHD}}$ is available (see \S\ref{sec:experiment}), but note that even a modest per-switch advantage (e.g., 30 seconds) compounds to 20--40 minutes over a full workday with 40+ switches.
+
+However, this compounding is bounded by novelty decay. As discussed in \S\ref{sec:limitations}, phasic dopamine habituation attenuates the novelty response over approximately 2--4 weeks of daily exposure to the same project set~\cite{grace2001}. The compound advantage therefore operates at full magnitude only within this novelty-maintenance window. After decay, a residual advantage may persist---ADHD's faster attentional disengagement and re-locking are partially structural (not solely dopamine-dependent)---but the phasic dopamine component that drives the largest speed differential is expected to converge toward NT baselines. Sustaining the compound advantage long-term requires periodic portfolio refresh or AI-assisted novelty maintenance (see \S\ref{sec:limitations}).
 
 \subsection{Boundary Conditions}
 
@@ -162,6 +164,8 @@ This advantage is predicted to hold only when:
 \item \textbf{Hyperfocus does not prevent switching.} ADHD users who enter a hyperfocus state on one session may resist transitioning even when other sessions would benefit from attention, effectively collapsing the multi-session workflow into a single-session one. The multi-session advantage requires that the environment (or the user's self-regulation) supports timely disengagement.
 
 \item \textbf{The individual's switching profile is positive.} Wolf~\cite{wolf2025} identified a triadic model of ADHD task switching distinguishing dopamine-seeking switchers, dopamine-conserving switch-avoiders, and pathological demand avoidance (PDA). The eddy advantage applies specifically to the switching-positive subgroup; switching-averse individuals may find multi-session workflows more aversive than beneficial. The proposed experiment includes a switching-preference screening measure to classify participants.
+
+\item \textbf{The individual is not on stimulant medication that eliminates phasic-tonic dopamine contrast, OR the medication dose preserves sufficient contrast.} Stimulant medications (methylphenidate, amphetamines) increase tonic dopamine levels, reducing the phasic-tonic contrast that underlies ADHD's rapid novelty response~\cite{grace2001, cortese2025}. At therapeutic doses, this may attenuate or eliminate the re-engagement speed advantage. The eddy hypothesis therefore applies most strongly to unmedicated individuals or those on doses that normalize sustained attention while preserving measurable phasic responsivity. The proposed experiment addresses this with a medication protocol (\S\ref{sec:experiment}).
 \end{enumerate}
 
 % ===================================================================
