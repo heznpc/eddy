@@ -74,7 +74,8 @@ b7651a1 Initial commit: Eddy position paper v1.1                        (~2026-0
 
 낮은 우선순위:
 8. NIMH RFA-MH-26-195 펀딩 검토 ($3M).
-9. 한국어 abstract.
+9. arXiv 대시보드 통합.
+10. 한국어 abstract.
 
 > 배포/제출 관련 할 일 (arXiv endorsement, CHI Workshop proposal 등)은 논증 완성과 별개이므로 `../submissions/assets-2026/NOTES.md` 참조.
 
